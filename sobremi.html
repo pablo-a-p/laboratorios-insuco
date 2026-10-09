@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Araos | Programación 4° Medio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --card: #141416;
+            --border: #2a2a2e;
+            --accent: #a3ff12;
+            --text: #f1f1f1;
+            --muted: #8b8b93;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* NAV */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid var(--border); }
+        nav .logo { font-weight: 800; font-size: 18px; }
+        nav .logo span { color: var(--accent); }
+        nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+        nav a:hover { color: var(--text); }
+
+        /* HERO */
+        .hero { padding: 80px 8% 40px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 0.9; font-weight: 800; letter-spacing: -2px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { margin-top: 20px; color: var(--muted); max-width: 450px; font-size: 18px; }
+        .hero .status { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 100px; font-size: 12px; margin-bottom: 20px; }
+        .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: blink 1.5s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .btn { display: inline-block; margin-top: 25px; background: var(--accent); color: #000; padding: 14px 28px; font-weight: 700; text-decoration: none; border-radius: 8px; transition: 0.2s; }
+        .btn:hover { transform: translateY(-2px); }
+
+        /* SECCIONES */
+        section { padding: 40px 8%; }
+        .label { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+
+        /* SKILLS */
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill { background: var(--card); border: 1px solid var(--border); padding: 10px 16px; border-radius: 8px; font-size: 14px; }
+        .skill:hover { border-color: var(--accent); }
+
+        /* PROYECTOS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: 0.2s; }
+        .card:hover { border-color: #3a3a3e; transform: translateY(-3px); }
+        .card h3 { font-size: 18px; margin-bottom: 8px; }
+        .card p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+        .card .tech { font-size: 11px; color: var(--accent); }
+
+        /* CONTACTO */
+        .contact-box { background: var(--card); border: 1px dashed var(--border); border-radius: 16px; padding: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .contact-box h2 { font-size: 24px; }
+
+        footer { text-align: center; padding: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); margin-top: 40px; }
+
+        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo mono"><span>//</span> pablo.araos</div>
+        <a href="#contacto" class="mono">4° Medio - Programación</a>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <div class="status mono"><div class="dot"></div> DISPONIBLE PARA PROYECTOS</div>
+            <h1>Soy Pablo Araos. <br><span>Estudiante de Programación</span> y futuro Dev.</h1>
+            <p>Soy de 4° Medio, mención Programación. Me gusta el desarrollo web, arreglar bugs a las 2am y que el código funcione a la primera (casi nunca pasa).</p>
+            <a href="#proyectos" class="btn mono">VER MIS PROYECTOS ↓</a>
+        </div>
+        <div class="mono" style="background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; font-size: 13px; color: var(--muted);">
+            <span style="color: var(--accent);">const</span> pablo = {<br>
+            &nbsp;&nbsp;nombre: <span style="color: #fff;">"Pablo Araos"</span>,<br>
+            &nbsp;&nbsp;curso: <span style="color: #fff;">"4° Medio"</span>,<br>
+            &nbsp;&nbsp;especialidad: <span style="color: #fff;">"Programación"</span>,<br>
+            &nbsp;&nbsp;ciudad: <span style="color: #fff;">"Chile"</span>,<br>
+            &nbsp;&nbsp;enfoque: <span style="color: #fff;">"Frontend + Lógica"</span>,<br>
+            &nbsp;&nbsp;aprendiendo: <span style="color: #fff;">["JS", "React", "Python"]</span><br>
+            };<br><br>
+            <span style="color: var(--accent);">// Postura crítica: activada</span>
+        </div>
+    </div>
+
+    <section>
+        <div class="label mono">02 / Habilidades</div>
+        <div class="skills mono">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3 / Flexbox / Grid</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Git / GitHub</div>
+            <div class="skill">Bootstrap</div>
+            <div class="skill">Trabajo Colaborativo</div>
+        </div>
+    </section>
+
+    <section id="proyectos">
+        <div class="label mono">03 / Proyectos de Taller</div>
+        <div class="grid">
+            <div class="card">
+                <h3>Página de Contacto - Módulo</h3>
+                <p>Formulario con validación JS, responsive y conectado a base de datos. Mi proyecto actual de 4° medio.</p>
+                <div class="tech mono">HTML / CSS / JS</div>
+            </div>
+            <div class="card">
+                <h3>Gestor de Tareas</h3>
+                <p>To-Do List que guarda en LocalStorage. Para no olvidar las tareas del INSUCO.</p>
+                <div class="tech mono">JAVASCRIPT / LOCALSTORAGE</div>
+            </div>
+            <div class="card">
+                <h3>Portafolio v1</h3>
+                <p>Primera versión de mi portafolio. Fea pero funcional. Todos empezamos así.</p>
+                <div class="tech mono">HTML / CSS</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="contact-box">
+            <div>
+                <h2>¿Hacemos algo juntos?</h2>
+                <p class="mono" style="color: var(--muted); font-size: 14px;">Estoy en 4° medio, pero respondo rápido.</p>
+            </div>
+            <a href="mailto:pablo.araos@ejemplo.cl" class="btn mono">pablo.araos@ejemplo.cl</a>
+        </div>
+    </section>
+
+    <footer class="mono">
+        Hecho por Pablo Araos - 4° Medio Programación © 2026 - Valparaíso, Chile
+    </footer>
+
+</body>
+</html>
